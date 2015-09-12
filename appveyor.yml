@@ -27,6 +27,9 @@ platform: Any CPU
 #  - Release
 configuration: Release
 
+before_build:
+  - nuget restore
+
 #---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
@@ -34,4 +37,6 @@ artifacts:
 
   # pushing a single file with environment variable in path and "Deployment name" specified
   - path: src/JSaraiva.Foursquare.SearchPlaces.Client/bin/$(configuration)
-    name: JSaraiva.Foursquare.SearchPlaces.Client.dll
+    name: 'package dll'
+
+  - path: src/output/*.nupkg
