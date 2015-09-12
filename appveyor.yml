@@ -1,4 +1,7 @@
-# version format
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
 version: 1.0.{build}
 
 #---------------------------------#
@@ -25,8 +28,8 @@ configuration: Release
 #---------------------------------#
 artifacts:
 
-  - path: src\JSaraiva.Foursquare.SearchPlaces.Client\bin\$(configuration)\*.dll
+  - path: 'src\JSaraiva.Foursquare.SearchPlaces.Client\bin\$(configuration)\*.dll'
     name: 'package dll'
 
-  - path: src\**\*.nupkg
+  - path: 'src\**\*.nupkg'
     name: 'package nuget'
