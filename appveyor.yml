@@ -5,7 +5,6 @@ version: 1.0.{build}
 #    environment configuration    #
 #---------------------------------#
 
-# enable patching of AssemblyInfo.* files
 assembly_info:
   patch: true
   file: '**\**\AssemblyInfo.*'
@@ -17,26 +16,17 @@ assembly_info:
 #       build configuration       #
 #---------------------------------#
 
-# build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
 
-# build Configuration, i.e. Debug, Release, etc.
-# to add several configurations to build matrix:
-#configuration:
-#  - Debug
-#  - Release
 configuration: Release
-
-before_build:
-  - nuget restore
 
 #---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
 artifacts:
 
-  # pushing a single file with environment variable in path and "Deployment name" specified
-  - path: src/JSaraiva.Foursquare.SearchPlaces.Client/bin/$(configuration)
+  - path: src\JSaraiva.Foursquare.SearchPlaces.Client\bin\$(configuration)\*.dll
     name: 'package dll'
 
-  - path: src/output/*.nupkg
+  - path: src\**\*.nupkg
+    name: 'package nuget'
