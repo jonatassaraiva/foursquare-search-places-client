@@ -33,5 +33,5 @@ configuration: Release
 artifacts:
 
   # pushing a single file with environment variable in path and "Deployment name" specified
-  - path: src/RespClient/bin/$(configuration)
+  - path: src/JSaraiva.Foursquare.SearchPlaces.Client/bin/$(configuration)
     name: JSaraiva.Foursquare.SearchPlaces.Client.dll
